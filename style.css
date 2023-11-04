@@ -1,0 +1,252 @@
+/* css reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+--clr-primary-verydarkmagenta: hsl(300, 43%, 22%);
+--clr-primary-softpink: hsl(333, 80%, 67%);
+
+--clr-neutral-DarkGrayishMagenta: hsl(303, 10%, 53%);
+--clr-neutral-LightGrayishMagenta: hsl(300, 24%, 96%);
+--clr-neurtral-white: hsl(0, 0%, 100%);
+
+--ff-spartan:'League Spartan', sans-serif;
+--fw-400: 400;
+--fw-500: 500;
+--fw-700: 700;
+
+--fs-400: .9375rem;
+
+--padding-h1: 2.7rem;
+
+--br-global: .5rem;
+
+}
+
+body {
+  font-family: var(--ff-spartan);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/bg-pattern-top-mobile.svg),
+    url(images/bg-pattern-bottom-mobile.svg);
+  background-position: top left, bottom right;
+  background-repeat: no-repeat;
+  font-size: var(--fs-400);
+  
+}
+
+.container {
+ max-width: 375px;
+ margin: 2rem 1rem;  
+}
+
+
+.top {
+  text-align: center;
+}
+
+.top h1 {
+  color: var(--clr-primary-verydarkmagenta);
+  font-weight: var(--fw-700);
+  padding: 0 var(--padding-h1) 1rem var(--padding-h1);
+  line-height: 1;
+}
+
+.top p {
+  color: var(--clr-primary-verydarkmagenta);
+  padding-bottom: 2rem;
+}
+
+.top__ratings {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  padding-bottom: 2rem;
+}
+.rating {
+  background-color: var(--clr-neutral-LightGrayishMagenta);
+  border-radius: var(--br-global);
+  
+
+}
+
+.rating__stars {
+  display: flex;
+  justify-content: center;
+  padding: .5rem 0;
+}
+
+.rating__stars img {
+  padding: 0 .3rem;
+}
+
+.rating__text {
+  color: var(--clr-primary-verydarkmagenta);
+  font-weight: 700;
+  padding-bottom: .5rem;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+
+}
+
+.testimonial {
+  background-color: var(--clr-primary-verydarkmagenta);
+  padding: 2rem 1.5rem;
+  color:var(--clr-neutral-LightGrayishMagenta);
+  border-radius: var(--br-global);
+}
+
+.testimonial__image-section {
+  display: flex;
+  gap: 1rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
+
+.testimonial__image-section img {
+  border-radius: 50%;
+  width: 20%;
+  height: auto;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pink {
+  color: var(--clr-primary-softpink);
+}
+
+
+.attribution {
+  margin-top: 3rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+  }
+
+  .top {
+    display:flex;
+    flex-direction: row;
+    text-align: left;
+    padding-bottom: 2rem;
+  }
+
+  .top__title {
+    max-width: 50%;
+  }
+  .top__title h1 {
+    padding: 0 6rem 2rem 0;
+    font-size: 3rem;
+  }
+
+  .top__title p {
+    padding-right: 8rem;
+  } 
+
+  .top__ratings{
+    width: 100%;
+    justify-content: center;
+  }
+  .rating {
+    display:flex;
+    justify-content: start;
+    gap:1rem;
+    width: 80%;
+  }
+  .rating__stars {
+       padding: 0.7rem 0 .7rem 1.5rem;
+  }
+
+  .rating__text {
+    padding-bottom: 0;
+    margin: auto 0;
+  }
+  .start {
+    align-self: flex-start;
+  }
+
+  .center {
+    align-self: center;
+  }
+
+  .end {
+    align-self: flex-end;
+  }
+
+  .testimonials {
+    flex-direction: row;
+    gap:1.6rem;
+  
+  }
+
+  .first {
+    margin-bottom: 2rem;
+  }
+}
+
